@@ -20,6 +20,7 @@ contract gameContract {
 
     function takeETH(uint256 _amount) external {
         IVAULT(vault).takeETH(_amount);
+    //  payable(_winner).transfer(_amount)
     }
 
     function reserveETH(uint256 _amount) external{
