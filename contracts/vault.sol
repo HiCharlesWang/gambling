@@ -75,13 +75,13 @@ contract gamblingVault is ERC20("gamblingShare", "gShare"), Ownable{
 
 
     function depositETH() payable external onlyGame { // test done 
-        int256 value = msg.value.toInt256();  // test done @audit will throw an error if we takeEth before receive
+        int256 value = msg.value.toInt256();  
         gameProfit += value; // test done
     }
 
 
     // function depositETH() payable external onlyGame { // test done 
-    //     uint256 profit = gameProfit.toUint256();  // test done @audit will throw an error if we takeEth before receive
+    //     uint256 profit = gameProfit.toUint256();  
     //     profit += msg.value; // test done
     //     gameProfit = profit.toInt256(); // test done
     // }
