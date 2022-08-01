@@ -54,11 +54,6 @@ contract gamblingVault is ERC20("gamblingShare", "gShare"), Ownable{
         return amount;
     }
 
-    // function addETH() payable external onlyGame {
-    //     uint256 profit = gameProfit.toUint256();
-    //     profit += msg.value;
-    //     gameProfit = profit.toInt256();
-    // }
 
     function takeETH(uint256 _amount) external onlyGame{ 
         require(address(this).balance >= _amount, "Contract does not have enough funds") ;// this should never happen
