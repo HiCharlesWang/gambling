@@ -74,6 +74,10 @@ contract gamblingVault is ERC20("gamblingShare", "gShare"), Ownable {
         payable(gameAddress).transfer(_amount);
     }
 
+    function decreaseReserve(uint256 _amount) external onlyGame { // in case game loses (decreasing reserve without taking ETH)
+        reservedAmount -= _amount;
+    }
+
     function reserveETH(uint256 _amount) external onlyGame {
         reservedAmount += _amount;
     }
